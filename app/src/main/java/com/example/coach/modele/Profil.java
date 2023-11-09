@@ -1,10 +1,14 @@
 package com.example.coach.modele;
 
+import com.example.coach.outils.Serializer;
+
+import java.io.Serializable;
+
 /**
  * Classe métier Profil
  * Contient les informations d'un profil
  */
-public class Profil {
+public class Profil implements Serializable {
     private static final Integer minFemme = 15;//maigre si en dessous
     private static final Integer maxFemme = 30;//gros si au dessus
     private static final Integer minHomme = 10;//maigre si en dessous
@@ -18,6 +22,7 @@ public class Profil {
 
     /**
      * Constructeur de la classe profil, il valorise les propriétés nécessaires à la création.
+     *
      * @param poids
      * @param taille
      * @param age
@@ -48,6 +53,7 @@ public class Profil {
 
     /**
      * Fonction qui calcule l'img et le retourne
+     *
      * @return img
      */
     public float getImg() {
@@ -60,6 +66,7 @@ public class Profil {
 
     /**
      * Retourne le message correspondant en fonction de l'img
+     *
      * @return la proriété message valorisé par (trop maigre, normal ou trop de graisse) en fonction de l'img
      */
     public String getMessage() {
