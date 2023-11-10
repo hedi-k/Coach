@@ -1,8 +1,12 @@
 package com.example.coach.modele;
 
+import android.database.sqlite.SQLiteDatabase;
+
 import com.example.coach.outils.Serializer;
 
 import java.io.Serializable;
+import java.util.Date;
+
 
 /**
  * Classe métier Profil
@@ -19,6 +23,8 @@ public class Profil implements Serializable {
     private int sexe;
     private float img = 0;
     private String message = "";
+    private Date dateMesure;
+
 
     /**
      * Constructeur de la classe profil, il valorise les propriétés nécessaires à la création.
@@ -28,11 +34,12 @@ public class Profil implements Serializable {
      * @param age
      * @param sexe
      */
-    public Profil(int poids, int taille, int age, int sexe) {
+    public Profil(int poids, int taille, int age, int sexe, Date dateMesure) {
         this.poids = poids;
         this.taille = taille;
         this.age = age;
         this.sexe = sexe;
+        this.dateMesure = dateMesure;
     }
 
     public int getPoids() {
@@ -49,6 +56,9 @@ public class Profil implements Serializable {
 
     public int getSexe() {
         return sexe;
+    }
+    public Date getDateMesure(){
+        return dateMesure;
     }
 
     /**
@@ -92,4 +102,6 @@ public class Profil implements Serializable {
         }
         return message;
     }
+
+
 }
